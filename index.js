@@ -62,7 +62,7 @@ function inning(max){
 
 }
 
-console.log(inning());
+//console.log(inning());
 
 
 /* Task 3: finalScore()
@@ -79,11 +79,17 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inning, numberOfInnings){
 
-  /*Code Here*/
-
+  let score = 0;
+  for ( let i = 0; i < numberOfInnings; i++){
+          score += inning ()
+  }
+  return "Home" + score 
 }
+
+console.log(finalScore(inning,9))
+
 
 /* Task 4: 
 
