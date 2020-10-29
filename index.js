@@ -96,7 +96,7 @@ function finalScore(inning, numberOfInnings){
   return finalScore;
 }
 
-console.log(finalScore(inning, 5));
+//console.log(finalScore(inning, 5));
 
 /* Task 4: 
 
@@ -106,7 +106,7 @@ Create a function called `scoreboard` that accepts the following parameters:
 (2) Callback function `inning`
 (2) A number of innings
 
-and returns the score at each pont in the game, like so:
+and returns the score at each pont in the game, like so: scoreboard(6)
 
 1st inning: awayTeam - homeTeam
 2nd inning: awayTeam - homeTeam
@@ -118,10 +118,38 @@ and returns the score at each pont in the game, like so:
 8th inning: awayTeam - homeTeam
 9th inning: awayTeam - homeTeam
 
-Final Score: awayTeam - homeTeam */
+if(){
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+}else{
+
 }
 
 
+
+
+
+Final Score: awayTeam - homeTeam */
+
+
+function ordinal_suffix_of(i) {
+  if(i == 1){return "st";}
+  if(i == 2){return "nd";}
+  if(i == 3){return "rd";}
+  return "th";
+} 
+
+function scoreboard(inning, numberOfInnings) {
+  let currentInning = 1;
+  let homeScoreThisInning = 0;
+  while(currentInning < (numberOfInnings + 1)){
+    homeScoreThisInning = inning();
+    console.log(currentInning + ordinal_suffix_of(currentInning) + " inning: Away " + homeScoreThisInning + " - Home " + inning());
+    homeTotalScore = homeTotalScore + homeScoreThisInning;
+    currentInning++;
+  }
+}
+
+let homeTotalScore = 0;
+scoreboard(inning, 9);
+
+console.log("HomeTotalScore: " + homeTotalScore);
